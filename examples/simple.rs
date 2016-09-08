@@ -3,11 +3,6 @@ use std::io;
 
 fn main() {
     let stdout = io::stdout();
-    let stdin = io::stdin();
-
-    {
-        let term = termo::Terminal::new(&stdout, &stdin);
-
-        term.text().bold().pos(2, 2).text("blah");
-    }
+    let term = termo::Terminal::new(&stdout);
+    let foo = term.text().bold().pos(2, 2).text("blah");
 }
